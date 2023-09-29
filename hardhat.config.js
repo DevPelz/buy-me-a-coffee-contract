@@ -1,10 +1,10 @@
-import "@nomicfoundation/hardhat-toolbox";
+require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 
-const config = {
+module.exports = {
   solidity: "0.8.19",
   networks: {
-    sepolia: {
+    base: {
       url: process.env.BASE_RPC,
       accounts: [process.env.PRIVATEKEY],
     },
@@ -13,5 +13,3 @@ const config = {
     apiKey: process.env.ETHERSCAN_API_KEY,
   },
 };
-
-export default config;

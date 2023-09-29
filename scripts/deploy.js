@@ -1,11 +1,12 @@
+const hre = require("hardhat");
 const ethers = require("ethers");
 
 async function main() {
-  const Coffee = await ethers.deployContract("BuyMeACoffee", []);
+  const Coffee = await hre.ethers.deployContract("BuyMeACoffee", []);
 
   await Coffee.waitForDeployment();
 
-  console.log(`Coffee contract deployed to ${lock.target}`);
+  console.log(`Coffee contract deployed to ${Coffee.target}`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
